@@ -30,7 +30,7 @@ export function Stadium() {
       <div><h3>Orari degli allenamenti</h3><table className="tbl"><tbody>{v.training.map(t => <tr key={t.day}><th scope="row">{t.day}</th><td>{t.time}</td></tr>)}</tbody></table></div></div>
     <h3>Mappa</h3>
 <Img
-  src="stadium/mappa.jpg"
+  src="stadium/mappa.jpeg"
   alt="Mappa illustrativa dello stadio"
   className="map"
 }
