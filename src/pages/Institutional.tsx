@@ -72,10 +72,8 @@ export function Stadium() {
       <Img
         src="stadium/mappa.jpeg"
         alt="Mappa illustrativa dello stadio"
-        className="map"
+        className="map-image"
       />
     </div>
   )
 }
-
-
