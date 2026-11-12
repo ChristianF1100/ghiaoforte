@@ -24,12 +24,13 @@ export function Sponsors() {
 }
 export function Stadium() {
   const v = club.venue; useTitle('Dove giochiamo', v.description)
-  const q = encodeURIComponent(v.mapsQuery)
   return <div className="wrap sec"><h1>Dove giochiamo</h1><h2>{v.name}</h2><p className="lead dark">{v.description}</p><p><b>Indirizzo:</b> {v.address}</p>
     <div className="grid2">{v.images.map((i, k) => <Img key={i} src={i} alt={`${v.name}, foto ${k + 1}`} className="rounded" />)}</div>
     <div className="grid2 gap"><div><h3>La struttura</h3><ul className="ticks">{v.facts.map(f => <li key={f}>{f}</li>)}</ul></div>
       <div><h3>Orari degli allenamenti</h3><table className="tbl"><tbody>{v.training.map(t => <tr key={t.day}><th scope="row">{t.day}</th><td>{t.time}</td></tr>)}</tbody></table></div></div>
-    <h3>Mappa</h3>{v.mapsQuery ? <iframe className="map" title="Mappa dell'impianto" loading="lazy" src={`https://www.google.com/maps?q=${q}&output=embed`} /> :
-      <svg className="map" viewBox="0 0 800 360" role="img" aria-label="Mappa dimostrativa dell'impianto"><rect width="800" height="360" fill="#e8e4dc" /><path d="M0 250H800M300 0V360" stroke="#fff" strokeWidth="18" /><rect x="420" y="90" width="260" height="120" rx="10" fill="#2f6b4f" /><rect x="450" y="110" width="200" height="80" fill="none" stroke="#fff" strokeWidth="3" /><circle cx="550" cy="150" r="18" fill="none" stroke="#fff" strokeWidth="3" /><circle cx="300" cy="250" r="12" fill="#e4572e" /><text x="320" y="240" fontSize="18" fontFamily="Arial">{v.name}</text></svg>}
-    {v.mapsQuery && <p><a className="btn" target="_blank" rel="noreferrer" href={`https://www.google.com/maps/dir/?api=1&destination=${q}`}>Indicazioni stradali</a></p>}</div>
+    <h3>Mappa</h3>
+<Img
+  src="stadium/mappa.jpg"
+  alt="Mappa illustrativa dello stadio"
+  className="map"
 }
