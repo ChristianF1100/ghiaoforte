@@ -22,15 +22,60 @@ export function Sponsors() {
     {(Object.keys(tierLabels) as (keyof typeof tierLabels)[]).map(t => <section key={t}><h2>{tierLabels[t]}</h2><div className={t === 'main' ? 'grid1' : 'grid3'}>
       {sponsors.filter(s => s.tier === t).map(s => <article className="card sp" key={s.name}><Img src={s.logo} alt={'Logo ' + s.name} /><div className="pad"><h3>{s.name}</h3><p>{s.description}</p>{s.url && <a className="more" href={s.url}>Sito web →</a>}</div></article>)}</div></section>)}</div>
 }
+
 export function Stadium() {
-  const v = club.venue; useTitle('Dove giochiamo', v.description)
-  return <div className="wrap sec"><h1>Dove giochiamo</h1><h2>{v.name}</h2><p className="lead dark">{v.description}</p><p><b>Indirizzo:</b> {v.address}</p>
-    <div className="grid2">{v.images.map((i, k) => <Img key={i} src={i} alt={`${v.name}, foto ${k + 1}`} className="rounded" />)}</div>
-    <div className="grid2 gap"><div><h3>La struttura</h3><ul className="ticks">{v.facts.map(f => <li key={f}>{f}</li>)}</ul></div>
-      <div><h3>Orari degli allenamenti</h3><table className="tbl"><tbody>{v.training.map(t => <tr key={t.day}><th scope="row">{t.day}</th><td>{t.time}</td></tr>)}</tbody></table></div></div>
-    <h3>Mappa</h3>
-<Img
-  src="stadium/mappa.jpeg"
-  alt="Mappa illustrativa dello stadio"
-  className="map"
+  const v = club.venue
+  useTitle('Dove giochiamo', v.description)
+
+  return (
+    <div className="wrap sec">
+      <h1>Dove giochiamo</h1>
+      <h2>{v.name}</h2>
+      <p className="lead dark">{v.description}</p>
+      <p><b>Indirizzo:</b> {v.address}</p>
+
+      <div className="grid2">
+        {v.images.map((i, k) => (
+          <Img
+            key={i}
+            src={i}
+            alt={`${v.name}, foto ${k + 1}`}
+            className="rounded"
+          />
+        ))}
+      </div>
+
+      <div className="grid2 gap">
+        <div>
+          <h3>La struttura</h3>
+          <ul className="ticks">
+            {v.facts.map(f => <li key={f}>{f}</li>)}
+          </ul>
+        </div>
+
+        <div>
+          <h3>Orari degli allenamenti</h3>
+          <table className="tbl">
+            <tbody>
+              {v.training.map(t => (
+                <tr key={t.day}>
+                  <th scope="row">{t.day}</th>
+                  <td>{t.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h3>Mappa</h3>
+      <Img
+        src="stadium/mappa.jpeg"
+        alt="Mappa illustrativa dello stadio"
+        className="map"
+      />
+    </div>
+  )
 }
+
+
