@@ -4,7 +4,7 @@ import { sortedNews } from '../data/news'
 import { fdate, useTitle } from '../lib/util'
 import Img from '../components/Img'
 export function Archive() {
-  useTitle('News', 'Tutte le notizie del Ghiaforte.')
+  useTitle('News', 'Tutte le notizie del Ghiaoforte.')
   const [q, setQ] = useState(''), [tag, setTag] = useState('')
   const all = sortedNews(), tags = [...new Set(all.flatMap(a => a.tags))].sort()
   const list = useMemo(() => { const s = q.trim().toLowerCase(); return all.filter(a => (!tag || a.tags.includes(tag)) && (!s || [a.title, a.excerpt, ...a.body, ...a.tags].join(' ').toLowerCase().includes(s))) }, [q, tag, all])

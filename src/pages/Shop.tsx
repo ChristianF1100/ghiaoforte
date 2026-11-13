@@ -6,7 +6,7 @@ import { money, useTitle } from '../lib/util'
 import Img from '../components/Img'
 const avail = (s: number) => s < 1 ? 'Non disponibile' : s < 10 ? `Ultimi ${s} pezzi` : 'Disponibile'
 export function Shop() {
-  useTitle('Shop ufficiale', 'Il merchandising ufficiale del Ghiaforte.')
+  useTitle('Shop ufficiale', 'Il merchandising ufficiale del Ghiaoforte.')
   return <div className="wrap sec"><h1>Shop ufficiale</h1><p className="lead dark">Maglie, abbigliamento e accessori per vivere i colori del club ogni giorno.</p>
     <div className="grid4">{products.map(p => <article className="card prod" key={p.id}><Link to={`/shop/${p.id}`}><Img src={p.img} alt={p.name} /></Link><div className="pad"><h3>{p.name}</h3><p className="price">{money(p.price)}</p><p className={p.stock < 1 ? 'muted' : 'ok'}>{avail(p.stock)}</p><Link className="btn sm" to={`/shop/${p.id}`}>Vedi prodotto</Link></div></article>)}</div></div>
 }

@@ -1,4 +1,4 @@
-# Ghiaforte — sito ufficiale
+# Ghiaoforte — sito ufficiale
 
 Sito statico in **React + TypeScript + Vite** con `HashRouter`, pensato per **GitHub Pages**. Tutti i contenuti stanno in `src/data/`.
 
@@ -52,7 +52,7 @@ Per cambiare la foto: sostituisci il file o cambia `img`. **Giocatore**: `t('Nom
 ```bash
 git init && git branch -M main
 git add .
-git commit -m "Aggiornamento sito Ghiaforte"
+git commit -m "Aggiornamento sito Ghiaoforte"
 git remote add origin https://github.com/UTENTE/REPOSITORY.git
 git push -u origin main
 ```

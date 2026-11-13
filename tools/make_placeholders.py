@@ -8,7 +8,7 @@ M += [(f'gallery/g{i}.svg',1200,800,f'Galleria {i}','Galleria') for i in range(1
 M += [(f'stadium/s{i}.svg',1600,900,f'Impianto {i}','Dove giochiamo / La società') for i in (1,2)]
 M += [(f'sponsors/sp{i}.svg',400,240,f'Sponsor {i}','Sponsor (logo)') for i in range(1,7)]
 M += [(f'shop/pr{i}.svg',800,800,f'Prodotto {i}','Shop') for i in range(1,13)]
-M += [('brand/placeholder.svg',800,600,'Ghiaforte','Fallback immagini mancanti')]
+M += [('brand/placeholder.svg',800,600,'Ghiaoforte','Fallback immagini mancanti')]
 for p,w,h,l,_ in M:
     hue = int(hashlib.md5(p.encode()).hexdigest()[:4],16) % 40 + 150
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="hsl({hue},45%,18%)"/><stop offset="1" stop-color="hsl({hue+20},40%,32%)"/></linearGradient></defs><rect width="{w}" height="{h}" fill="url(#g)"/><circle cx="{w*.78}" cy="{h*.3}" r="{min(w,h)*.28}" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="8"/><path d="M0 {h*.72}H{w}" stroke="#fff" stroke-opacity=".12" stroke-width="6"/><text x="50%" y="52%" text-anchor="middle" font-family="Arial" font-weight="700" font-size="{min(w,h)*.07}" fill="#fff" fill-opacity=".75">{l}</text></svg>'''

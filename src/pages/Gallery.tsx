@@ -3,7 +3,7 @@ import { gallery } from '../data/gallery'
 import { useTitle } from '../lib/util'
 import Img from '../components/Img'
 export default function Gallery() {
-  useTitle('Galleria', 'Le fotografie della vita del Ghiaforte, stagione per stagione.')
+  useTitle('Galleria', 'Le fotografie della vita del Ghiaoforte, stagione per stagione.')
   const [lb, setLb] = useState<{ s: number; i: number } | null>(null)
   const photos = lb ? gallery[lb.s].photos : [], n = photos.length
   useEffect(() => {

@@ -11,13 +11,13 @@ export function Club() {
     <h2>Impianto e sede</h2><div className="card feat"><Img src={club.venue.images[0]} alt={club.venue.name} /><div><h3>{club.venue.name}</h3><p>{club.venue.description}</p><p className="muted">{club.venue.address}</p></div></div></div>
 }
 export function Team() {
-  useTitle('Prima squadra', 'La rosa della prima squadra del Ghiaforte.')
+  useTitle('Prima squadra', 'La rosa della prima squadra del Ghiaoforte.')
   return <div className="wrap sec"><h1>Prima squadra</h1><p className="lead dark">Il gruppo che porta i colori del {club.name} in campo: esperienza, giovani e senso di appartenenza.</p>
     {(Object.keys(roleLabels) as (keyof typeof roleLabels)[]).map(r => <section key={r}><h2>{roleLabels[r]}</h2><div className="grid4">
       {players.filter(p => p.role === r).sort((a, b) => a.number - b.number).map(p => <article className="card player" key={p.name}><Img src={p.photo ?? 'players/placeholder.svg'} alt={p.name} /><span className="num">{p.number}</span><div className="pad"><h3>{p.name}</h3><p className="muted">{p.nat} · {p.born}</p></div></article>)}</div></section>)}</div>
 }
 export function Sponsors() {
-  useTitle('Sponsor e partner', 'Le aziende che sostengono il Ghiaforte.')
+  useTitle('Sponsor e partner', 'Le aziende che sostengono il Ghiaoforte.')
   return <div className="wrap sec"><h1>Sponsor e partner</h1><p className="lead dark">Aziende del territorio che camminano al fianco del club: a loro va il nostro ringraziamento.</p>
     {(Object.keys(tierLabels) as (keyof typeof tierLabels)[]).map(t => <section key={t}><h2>{tierLabels[t]}</h2><div className={t === 'main' ? 'grid1' : 'grid3'}>
       {sponsors.filter(s => s.tier === t).map(s => <article className="card sp" key={s.name}><Img src={s.logo} alt={'Logo ' + s.name} /><div className="pad"><h3>{s.name}</h3><p>{s.description}</p>{s.url && <a className="more" href={s.url}>Sito web →</a>}</div></article>)}</div></section>)}</div>
