@@ -5,7 +5,7 @@ export const sponsors: Sponsor[] = [
 { 
     name: 'Electrical Restart s.r.l.s.', 
     tier: 'main', 
-    logo: 'sponsors/sp1.jpeg', 
+    logo: 'sponsors/sp1.png', 
     description: 'Specializzata in impianti elettrici civili e industriali, è il partner ufficiale che garantisce l\'illuminazione di emergenza per il campo.', 
     url: '#/sponsor' 
   },
