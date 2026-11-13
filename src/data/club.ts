@@ -7,7 +7,7 @@ export const club = {
       {
         year: '1979',
         title: 'La fondazione e la Terza Categoria',
-        text: 'Carlo Cartone, senzatetto benemerito con l\'hobby della burocrazia federale, fonda l\'ASD Ghiaoforte saldando l\'iscrizione tramite una colletta fuori dalla messa. La squadra debutta in Terza Categoria su un terreno in ghiaia omologato solo perché la provincia non aveva i fondi per bonificarlo.'
+        text: 'Carlo Cartone, senzatetto benemerito del paese, fonda l\'ASD Ghiaoforte saldando l\'iscrizione con i soldi racimolati dall\'elemosina. La squadra debutta in Terza Categoria su un terreno in ghiaia omologato solo perché la provincia non aveva i fondi per bonificarlo.'
       },
       {
         year: '1996',
@@ -22,12 +22,12 @@ export const club = {
       {
         year: '2016',
         title: 'La scomparsa del fondatore',
-        text: 'Carlo Cartone decede a settantotto anni, lasciando in eredità quattordici palloni sgonfi e la presidenza a Mr. Fistiggi, vincolato per testamento a tesserare gratuitamente i residenti prima che l\'anagrafe li dichiari deceduti.'
+        text: 'Carlo Cartone decede a settantotto anni, lasciando in eredità dei palloni sgonfi e la presidenza a Mr. Fistiggi.'
       },
       {
         year: '2019',
         title: 'Mr. Fistiggi in panchina e la Promozione',
-        text: 'Stanco di vedere i propri stipendiati spazzare il pallone nei campi adiacenti, Mr. Fistiggi assume anche la guida tecnica. L\'imposizione forzosa del tiki-taka spagnolo a una rosa di muratori e pensionati frutta, nel 2019/20, lo storico approdo in Promozione.'
+        text: 'Stanco di vedere i propri stipendiati spazzare il pallone nei campi adiacenti, Mr. Fistiggi assume anche la guida tecnica. L\'imposizione forzosa del tiki taka spagnolo a una rosa di muratori e pensionati frutta, nel 2019/20, lo storico approdo in Promozione.'
       },
       {
         year: '2023',
@@ -51,7 +51,7 @@ export const club = {
       },
       {
         title: 'Passione',
-        text: 'Ogni domenica rappresenta un\'occasione per onorare il gialloarancio, indipendentemente dalle condizioni meteorologiche o dal saldo punti in classifica.'
+        text: 'Ogni domenica rappresenta un\'occasione per onorare il verdenero, indipendentemente dalle condizioni meteorologiche o dal saldo punti in classifica.'
       },
       {
         title: 'Impegno',
@@ -77,7 +77,7 @@ facts: [
   'Strade e viabilità interna',
   'Strutture sportive e servizi dedicati'
 ],
-    training: [{ day: 'Martedì', time: '19:30 – 21:30' }, { day: 'Mercoledì', time: '19:30 – 21:30' }, { day: 'Giovedì', time: '19:30 – 21:30' }, { day: 'Venerdì', time: '18:30 – 20:00 (rifinitura)' }],
+    training: [{ day: 'Martedì', time: '19:30 – 21:30' }, { day: 'Mercoledì', time: '19:30 – 21:30' }, { day: 'Giovedì', time: '19:30 – 21:30' }, { day: 'Venerdì', time: '18:30 – 20:00' }],
     mapsQuery: '',
     images: ['stadium/s1.jpeg','stadium/s2.jpeg'],
   },
