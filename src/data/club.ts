@@ -81,5 +81,5 @@ facts: [
     mapsQuery: '',
     images: ['stadium/s1.jpeg','stadium/s2.jpeg'],
   },
-  social: [{ label: 'Instagram', url: '#/' }, { label: 'Facebook', url: '#/' }, { label: 'YouTube', url: '#/' }],
+  social: [{ label: 'Instagram', url: 'https://www.youtube.com/watch?v=eBGIQ7ZuuiU' }, { label: 'Facebook', url: 'https://www.youtube.com/watch?v=eBGIQ7ZuuiU' }, { label: 'YouTube', url: 'https://www.youtube.com/watch?v=eBGIQ7ZuuiU' }],
 }
