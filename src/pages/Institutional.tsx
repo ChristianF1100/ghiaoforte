@@ -70,7 +70,7 @@ export function Stadium() {
 
       <h3>Mappa</h3>
       <Img
-        src="stadium/mappa.jpeg"
+        src="stadium/mappa.jpg"
         alt="Mappa illustrativa dello stadio"
         className="map-image"
       />
