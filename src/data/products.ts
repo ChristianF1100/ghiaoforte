@@ -7,7 +7,7 @@ export const products: Product[] = [
   name: 'Maglia Home 2026/27',
   price: 69.9,
   desc: 'Ispirata ai tre colori che raccontano l’identità di Ghiaoforte. Il nero rappresenta la strada da cui è nata l’AS Ghiaoforte, il verde bosco richiama la terra e le verdi colline di Ghiaoforte, mentre l’arancione rappresenta i mandarini, frutto dell’impegno e della passione.',
-  img: 'shop/fronte.jpeg', 'shop/retro.jpeg',
+  img: 'shop/fronte.jpeg',
   sizes: S,
   colors: ['Casa'],
   stock: 40
