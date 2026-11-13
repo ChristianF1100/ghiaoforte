@@ -1,24 +1,66 @@
 // Informazioni della società: modifica qui testi, impianto e social.
 export const club = {
   name: 'Ghiaoforte', shortName: 'GFT', founded: 1979,
-  tagline: 'Uniti insieme come gli spicchi di un mandarino.',
-  description: 'Società calcistica nata dal sogno di un sensatetto, cresciuta con il sudore e la passione di un intera comunità.',
+  tagline: 'Nati senza un tetto, uniti sotto gli stessi colori.',
+  description: 'Fondata nel 1979 senza una sede né risorse, l\'AS Ghiaoforte è oggi il simbolo sportivo e l\'orgoglio di un intero territorio.',
   story: [
-    { year: '1979', title: 'La fondazione', text: 'Il famosissimo Mimmo Cartone (senzatetto conosciuto da tutti nel comune di Ghiaoforte), prese l\'iniziativa di avviare una piccola associazione sportiva dilettantistica.' },
-    { year: '1996', title: 'Il primo campo in erba', text: 'Dopo anni di sacrifici e raccolte fondi, la società inaugura il terreno in erba naturale. Mr. Cartone divenne leggenda.' },
-    { year: '2011', title: 'La promozione storica', text: 'Una stagione indimenticabile porta la ASD Ghiaoforte nella categoria superiore.' },
-    { year: '2016', title: 'La dipartita', text: 'Mimmo Cartone diede un ultimo saluto aI ghiaofortesi, lasciando in eredità la ASD GHIAOFORTE.' },
-    { year: '2026', title: 'Il nuovo impianto', text: 'Viene inaugurato in onore del fondatore il Comunale «Mimmo Cartone», completamente ristrutturato con tribuna coperta e nuovi spogliatoi.' },
-  ],
+      {
+        year: '1979',
+        title: 'La fondazione e la Terza Categoria',
+        text: 'Carlo Cartone, senzatetto benemerito con l\'hobby della burocrazia federale, fonda l\'ASD Ghiaoforte saldando l\'iscrizione tramite una colletta fuori dalla messa. La squadra debutta in Terza Categoria su un terreno in ghiaia omologato solo perché la provincia non aveva i fondi per bonificarlo.'
+      },
+      {
+        year: '1996',
+        title: 'Il manto erboso e la Seconda Categoria',
+        text: 'Dopo diciassette anni di lotterie parrocchiali truccate e manutenzione eseguita da Cartone a mano libera, il Comune finanzia la semina dell\'erba naturale in vista delle elezioni. Ridotti gli infortuni alle caviglie, nella stagione 1996/97 arriva la promozione in Seconda Categoria.'
+      },
+      {
+        year: '2009',
+        title: 'L\'arrivo di Mr. Fistiggi e la Prima Categoria',
+        text: 'Ritiratosi a Ghiaoforte dopo una carriera nel Real Madrid per ragioni fiscali mai chiarite, Mister Fistiggi entra in società. Ripianato il buco di bilancio annotato da Cartone sulle bollette non pagate, nel 2011 porta il club in Prima Categoria.'
+      },
+      {
+        year: '2016',
+        title: 'La scomparsa del fondatore',
+        text: 'Carlo Cartone decede a settantotto anni, lasciando in eredità quattordici palloni sgonfi e la presidenza a Mr. Fistiggi, vincolato per testamento a tesserare gratuitamente i residenti prima che l\'anagrafe li dichiari deceduti.'
+      },
+      {
+        year: '2019',
+        title: 'Mr. Fistiggi in panchina e la Promozione',
+        text: 'Stanco di vedere i propri stipendiati spazzare il pallone nei campi adiacenti, Mr. Fistiggi assume anche la guida tecnica. L\'imposizione forzosa del tiki-taka spagnolo a una rosa di muratori e pensionati frutta, nel 2019/20, lo storico approdo in Promozione.'
+      },
+      {
+        year: '2023',
+        title: 'Nasce l\'AS Ghiaoforte',
+        text: 'Con l\'ingresso di sponsor che pagano in contanti non tracciabili anziché in mandarini e melograni, il club abbandona la sigla dilettantistica e diventa ufficialmente AS Ghiaoforte.'
+      },
+      {
+        year: '2026',
+        title: 'Il nuovo Comunale «Carlo Cartone»',
+        text: 'Consolidata la permanenza in Promozione, si chiude il cantiere infinito dell\'impianto cittadino. Nasce lo Stadio Comunale «Carlo Cartone», un\'opera avveniristica resa possibile solo grazie al misterioso incendio che ha raso al suolo la vecchia struttura assicurata la settimana prima.'
+      }
+    ],
   values: [
-    { title: 'Territorio', text: 'Il Ghiaoforte è del paese: nasce qui, gioca qui, vive con chi lo sostiene.' },
-    { title: 'Spirito di squadra', text: 'Si vince e si perde insieme, dal primo all\'ultimo giocatore della rosa.' },
-    { title: 'Passione', text: 'Ogni domenica è un\'occasione per onorare il gialloarancio' },
-    { title: 'Impegno', text: 'Allenarsi con costanza, migliorarsi ogni giorno e dare sempre il massimo.' },
-  ],
+      {
+        title: 'Territorio',
+        text: 'L\'AS Ghiaoforte nasce e gioca qui. Poiché il cimitero comunale supera ormai per popolazione il centro abitato, la società si vede costretta ad acquistare giocatori provenienti da fuori provincia.'
+      },
+      {
+        title: 'Spirito di squadra',
+        text: 'Si vince e si perde insieme, dal capitano fino al terzo portiere convocato solo per raggiungere il numero legale in distinta.'
+      },
+      {
+        title: 'Passione',
+        text: 'Ogni domenica rappresenta un\'occasione per onorare il gialloarancio, indipendentemente dalle condizioni meteorologiche o dal saldo punti in classifica.'
+      },
+      {
+        title: 'Impegno',
+        text: 'Allenarsi con costanza e garantire la presenza al campo, anche quando la stagione è ormai compromessa e gli sponsor iniziano a ritirare i rimborsi spese.'
+      }
+    ],
   venue: {
-    name: 'Stadio Comunale «Mimmo Cartone»', address: 'Vico Maonna Seri, 18 — Ghiaoforte',
-    description: 'Campo in erba naturale con tribuna coperta, spogliatoi rinnovati e un\'area per i tifosi affacciata sul terreno di gioco.',
+    name: 'Stadio Comunale «Carlo Cartone»', address: 'Vico Maonna Seri, 18 — Ghiaoforte (CS)',
+    description: 'Manto in erba di ultima generazione, spogliatoi finalmente bonificati dall\'amianto e una tribuna coperta con vista privilegiata sul campo, finanziata grazie a fondi europei destinati originariamente all\'edilizia scolastica.',
 facts: [
   'Stadio da 12.694 posti',
   'Tribune con posti a sedere gialli',
