@@ -60,7 +60,7 @@ export const club = {
     ],
   venue: {
     name: 'Stadio Comunale «Carlo Cartone»', address: 'Vico Maonna Seri, 18 — Ghiaoforte (CS)',
-    description: 'Manto in erba di ultima generazione, spogliatoi finalmente bonificati dall\'amianto e una tribuna coperta con vista privilegiata sul campo, finanziata grazie a fondi europei destinati originariamente all\'edilizia scolastica.',
+    description: 'Manto in erba di ultima generazione, spogliatoi finalmente bonificati dall\'amianto e una tribuna con vista privilegiata sul campo, finanziata grazie a fondi europei destinati originariamente all\'edilizia scolastica.',
 facts: [
   'Stadio da 12.694 posti',
   'Tribune con posti a sedere gialli',
