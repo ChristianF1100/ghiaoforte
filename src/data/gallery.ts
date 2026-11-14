@@ -2,7 +2,6 @@
 export interface Photo { src: string; alt: string }
 export const gallery: { season: string; photos: Photo[] }[] = [
 { 
-  season: '2026/2027', 
   photos: [
     { 
       src: 'gallery/g1.jpeg', 
