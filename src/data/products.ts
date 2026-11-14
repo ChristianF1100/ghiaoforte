@@ -20,7 +20,7 @@ export const products: Product[] = [
     desc: 'Striscione ufficiale con i colori e lo stemma di Ghiaoforte, perfetto per sostenere la squadra dagli spalti o per decorare la propria sede.', 
     img: 'shop/striscione.png', 
     sizes: ['Unica'], 
-    colors: ['Nero', 'Verde', 'Arancione'], 
+    colors: ['Originale'], 
     stock: 25 
   }
 ]
