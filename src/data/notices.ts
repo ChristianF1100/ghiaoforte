@@ -1,6 +1,4 @@
-// ==========================================
-// TICKER MESSAGES (AVVISI STADIO)
-// ==========================================
+// Comunicazioni e avvisi sullo stadio per i tifosi.
 export const tickerMessages = [
   'Attenzione: la crepa nel settore distinti si è allargata dopo l’ultima pioggia. Si consiglia ai tifosi più robusti di distribuirsi uniformemente.',
   'Si avvisano gli spettatori che la rete di recinzione dietro la porta nord presenta varchi larghi a sufficienza per far passare un pallone o un bambino.',
@@ -9,11 +7,7 @@ export const tickerMessages = [
   'Si raccomanda di non appoggiarsi alle balaustre del primo anello durante le esultanze: tengono ancora, ma solo per abitudine.',
 ]
 
-// ==========================================
-// COMUNICAZIONI UFFICIALI AI TIFOSI
-// ==========================================
 export interface Comunicazione { prot: string; title: string; text: string }
-
 export const comunicazioni: Comunicazione[] = [
   { 
     prot: 'GF/2026/001', 
@@ -32,18 +26,13 @@ export const comunicazioni: Comunicazione[] = [
   },
 ]
 
-// ==========================================
-// STATO DEI SERVIZI DELLO STADIO
-// ==========================================
-export interface ServiceStatus { label: string; value: string; note: string }
-
-export const serviceStatus: ServiceStatus[] = [
-  { label: 'Agibilità Tribuna', value: 'Sotto osservazione', note: 'Evitare salti sincronizzati' },
-  { label: 'Illuminazione', value: 'Instabile', note: 'Allaccio provvisorio attivo' },
-  { label: 'Servizi Igienici', value: 'Fuori uso', note: 'Chiusi dal 2018' },
+export const serviceStatus: { name: string; state: string; tone: 'ok' | 'warn' | 'bad' }[] = [
+  { name: 'Agibilità tribuna', state: 'A rischio crollo', tone: 'warn' },
+  { name: 'Servizi igienici', state: 'Chiusi dal 2018', tone: 'bad' },
+  { name: 'Illuminazione di emergenza', state: 'Allaccio provvisorio', tone: 'warn' },
+  { name: 'Infermeria e antitetanica', state: 'Sprovvista', tone: 'bad' },
+  { name: 'Chiosco mandarini', state: 'Operativo', tone: 'ok' },
 ]
 
-export const comunicazioneTxt = () =>
-  comunicazioni
-    .map(c => `[${c.prot}] ${c.title}\n${c.text}`)
-    .join('\n\n---\n\n')
+export const comunicazioneTxt = (c: Comunicazione) =>
+  `AS GHIAOFORTE\nComunicazione ufficiale — Prot. ${c.prot}\n\n${c.title.toUpperCase()}\n\n${c.text}\n\nIl presente documento solleva la società da ogni responsabilità civile e penale per infortuni sugli spalti.\n`
