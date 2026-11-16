@@ -31,3 +31,19 @@ export const comunicazioni: Comunicazione[] = [
     text: 'Si avvisano i sostenitori che i bagni del settore ospiti sono temporaneamente fuori uso dal 2018. Per il ristoro durante l’intervallo è attivo il chiosco mobile all’ingresso, fino a esaurimento scorte o intervento delle autorità sanitarie.' 
   },
 ]
+
+// ==========================================
+// STATO DEI SERVIZI DELLO STADIO
+// ==========================================
+export interface ServiceStatus { label: string; value: string; note: string }
+
+export const serviceStatus: ServiceStatus[] = [
+  { label: 'Agibilità Tribuna', value: 'Sotto osservazione', note: 'Evitare salti sincronizzati' },
+  { label: 'Illuminazione', value: 'Instabile', note: 'Allaccio provvisorio attivo' },
+  { label: 'Servizi Igienici', value: 'Fuori uso', note: 'Chiusi dal 2018' },
+]
+
+export const comunicazioneTxt = () =>
+  comunicazioni
+    .map(c => `[${c.prot}] ${c.title}\n${c.text}`)
+    .join('\n\n---\n\n')
