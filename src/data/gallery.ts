@@ -15,7 +15,15 @@ export const gallery: { season: string; photos: Photo[] }[] = [
   photos: [
     { 
       src: 'gallery/g1.jpeg', 
-      alt: 'Carlo Cartone impartisce lezioni di tattica ai primi tesserati su un terreno demaniale occupato abusivamente, ignorando completamente i regolamenti sportivi e le norme di sicurezza.' 
+      alt: 'Carlo Cartone impartisce lezioni di tattica ai primi tesserati su un terreno occupato abusivamente, ignorando ogni norma di sicurezza.' 
+    },
+    { 
+      src: 'gallery/g3.jpeg', 
+      alt: 'Pausa a bordo campo: Carlo Cartone studia gli schemi su una sedia impagliata sottratta al bar, divorando l’intero budget alimentare della squadra in mandarini[cite: 1].' 
+    },
+    { 
+      src: 'gallery/g4.jpeg', 
+      alt: 'La rosa 1981/1982 schierata sulla ghiaia: pettorine spaiate, numeri dipinti a mano e Carlo Cartone al centro con sigaretta d’ordinanza[cite: 2].' 
     }
   ] 
 },
