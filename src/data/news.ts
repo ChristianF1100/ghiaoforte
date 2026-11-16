@@ -1,7 +1,19 @@
 // Aggiungi una news = aggiungi un oggetto. La home mostra automaticamente quella con la data più recente.
 export interface Article { id: string; title: string; date: string; img: string; excerpt: string; tags: string[]; body: string[] }
 export const news: Article[] = [
-{ 
+{
+  id: 'acquisto-breel-embolo',
+  title: 'Potenza ed esperienza in attacco: arriva Breel Embolo',
+  date: '2026-11-15',
+  img: 'news/n3.jpeg',
+  tags: ['mercato', 'prima squadra'],
+  excerpt: 'L\'attaccante svizzero approda all\'AS Ghiaoforte e timbra subito il cartellino a pochi minuti dalla firma.',
+  body: [
+    'L\'AS Ghiaoforte annuncia ufficialmente l\'ingaggio dell\'attaccante Breel Embolo, prelevato per garantire fisicità, esperienza internazionale e strappi in profondità al reparto avanzato. Il centravanti svizzero ha apposto la firma sul contratto direttamente sul cofano dell\'auto della segreteria, accettando un accordo basato sui risultati e sull\'ambizione del nuovo progetto tecnico.',
+    'Sceso immediatamente sul terreno di gioco sotto lo sguardo attento di Mr. Fistiggi, Embolo ha impiegato pochi istanti per lasciare il segno, trovando subito la via del gol alla prima palla utile e accendendo l\'entusiasmo degli spalti del Comunale.'
+  ]
+}
+  { 
   id: 'nuova-maglia-home', 
   title: 'Presentata la nuova maglia Home: l\'identità di Ghiaoforte cucita addosso', 
   date: '2026-11-08', 
@@ -17,7 +29,7 @@ export const news: Article[] = [
     id: 'acquisto-igor-jesus',
     title: 'Colpo di mercato in attacco: arriva Igor Jesus',
     date: '2026-11-12',
-    img: 'news/n2.png',
+    img: 'news/n2.jpeg',
     tags: ['mercato', 'prima squadra'],
     excerpt: 'La nuova punta centrale lascia la Premier League per sposare il progetto dell\'AS Ghiaoforte.',
     body: [
