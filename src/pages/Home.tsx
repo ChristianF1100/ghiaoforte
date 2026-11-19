@@ -6,14 +6,15 @@ import { players, roleLabels } from '../data/players'
 import { sponsors } from '../data/sponsors'
 import { ads } from '../data/ads'
 import { comunicazioni, comunicazioneTxt, serviceStatus } from '../data/notices'
-import { downloadText, fdate, img, pad, useTitle, useVisits } from '../lib/util'
+import { downloadText, fdate, img, pad, useTitle } from '../lib/util'
 import Box from '../components/Box'
 import AdBanner from '../components/AdBanner'
 import Img from '../components/Img'
 const quick = [['/societa', 'La società'], ['/squadre', 'Prima squadra'], ['/news', 'Archivio news'], ['/galleria', 'Galleria'], ['/dove-giochiamo', 'Dove giochiamo'], ['/sponsor', 'Sponsor e partner'], ['/shop', 'Shop ufficiale']]
+const VISITS = 4 // contatore visite fisso
 export default function Home() {
   useTitle('Sito ufficiale', club.description)
-  const all = sortedNews(), n = all[0], visits = useVisits(), com = comunicazioni[0]
+  const all = sortedNews(), n = all[0], com = comunicazioni[0]
   const roster = (Object.keys(roleLabels) as (keyof typeof roleLabels)[]).flatMap(r => players.filter(p => p.role === r).sort((a, b) => a.number - b.number))
   const photos = gallery.flatMap(g => g.photos).slice(0, 4)
   return <div className="home">
@@ -21,7 +22,7 @@ export default function Home() {
       <aside className="col-l" aria-label="Accesso rapido">
         <Box title="Accesso rapido"><ul className="quick">{quick.map(([to, l]) => <li key={to}><Link to={to}>{l}</Link></li>)}</ul></Box>
         <Box title="Stato dei servizi"><table className="tbl stat"><tbody>{serviceStatus.map(s => <tr key={s.name}><th scope="row">{s.name}</th><td><span className={'dot ' + s.tone} aria-hidden="true" />{s.state}</td></tr>)}</tbody></table></Box>
-        <Box title="Contatore visite"><p className="counter" aria-label={`Visitatore numero ${club.founded + visits}`}>{pad(club.founded + visits, 7).split('').map((d, i) => <b key={i}>{d}</b>)}</p><p className="muted small">Visitatori (conteggio indicativo, non verificato).</p></Box>
+        <Box title="Contatore visite"><p className="counter" aria-label={`Visitatore numero ${VISITS}`}>{pad(VISITS, 7).split('').map((d, i) => <b key={i}>{d}</b>)}</p><p className="muted small">Visitatori (conteggio indicativo, non verificato).</p></Box>
         <AdBanner ad={ads[0]} variant="tall" />
       </aside>
 
