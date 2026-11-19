@@ -27,7 +27,7 @@ export default function VideoAd({ videos, onDone }: { videos: AdVideo[]; onDone:
     <div className="win ad-win">
       <div className="win-title"><span>📺 MESSAGGIO PUBBLICITARIO</span><span className="win-tag">non saltabile</span></div>
       <div className="win-body">
-      <p className="ad-top">Questo annuncio non si può saltare. Il sito e la nuova maglia del Ghiaoforte esistono grazie a <b>Electrical Restart s.r.l.s.</b>{ad.sponsor && <> — Inserzione di <b>{ad.sponsor}</b></>}.</p>
+      <p className="ad-top">Questo annuncio non si può saltare. Il sito e la nuova maglia del Ghiaoforte esistono grazie a <b>Electrical Restart s.r.l.s.</b>.</p>
         <div className="ad-video">
           <video ref={ref} src={videoUrl(ad.src)} playsInline preload="auto" tabIndex={-1} aria-label="Video pubblicitario"
             onContextMenu={e => e.preventDefault()}
