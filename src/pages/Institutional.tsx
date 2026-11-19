@@ -19,7 +19,7 @@ export function Team() {
 }
 export function Sponsors() {
   useTitle('Sponsor e partner', 'Le aziende che sostengono il Ghiaoforte.')
-  return <div className="wrap sec"><h1>Sponsor e partner</h1><Notice>i collegamenti agli sponsor sono forniti dagli sponsor stessi; la società declina ogni responsabilità.</Notice><p className="lead dark">Aziende del territorio che camminano al fianco del club: a loro va il nostro ringraziamento.</p>
+return <div className="wrap sec"><h1>Sponsor e partner</h1><Notice>collegamenti verificati l’ultima volta nel 2016; la società non risponde di pagine scadute, domini abbandonati o errori di reindirizzamento.</Notice><p className="lead dark">Le realtà commerciali che sostengono l’AS Ghiaoforte.</p>
     {(Object.keys(tierLabels) as (keyof typeof tierLabels)[]).map(t => <section key={t}><h2>{tierLabels[t]}</h2><div className={t === 'main' ? 'grid1' : 'grid3'}>
       {sponsors.filter(s => s.tier === t).map(s => <article className="card sp" key={s.name}><Img src={s.logo} alt={'Logo ' + s.name} /><div className="pad"><h3>{s.name}</h3><p>{s.description}</p>{s.url && <a className="more" href={s.url}>Sito web →</a>}</div></article>)}</div></section>)}</div>
 }

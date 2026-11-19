@@ -20,7 +20,7 @@ export default function Home() {
     <div className="home-grid">
       <aside className="col-l" aria-label="Accesso rapido">
         <Box title="Accesso rapido"><ul className="quick">{quick.map(([to, l]) => <li key={to}><Link to={to}>{l}</Link></li>)}</ul></Box>
-        <Box title="Stato dei servizi digitali"><table className="tbl stat"><tbody>{serviceStatus.map(s => <tr key={s.name}><th scope="row">{s.name}</th><td><span className={'dot ' + s.tone} aria-hidden="true" />{s.state}</td></tr>)}</tbody></table></Box>
+        <Box title="Stato dei servizi"><table className="tbl stat"><tbody>{serviceStatus.map(s => <tr key={s.name}><th scope="row">{s.name}</th><td><span className={'dot ' + s.tone} aria-hidden="true" />{s.state}</td></tr>)}</tbody></table></Box>
         <Box title="Contatore visite"><p className="counter" aria-label={`Visitatore numero ${club.founded + visits}`}>{pad(club.founded + visits, 7).split('').map((d, i) => <b key={i}>{d}</b>)}</p><p className="muted small">Visitatori (conteggio indicativo, non verificato).</p></Box>
         <AdBanner ad={ads[0]} variant="tall" />
       </aside>
@@ -51,7 +51,7 @@ export default function Home() {
 
       <aside className="col-r" aria-label="Sponsor e avvisi">
         <AdBanner ad={ads[1]} variant="tall" />
-        <Box title="Avviso della segreteria" className="hl"><p>La segreteria informa che gli orari di apertura saranno resi noti all’apertura. Per ogni informazione si invita a consultare il presente sito, attualmente in aggiornamento.</p><p className="muted small">Prot. {comunicazioni[1].prot}</p></Box>
+        <Box title="Avviso della segreteria" className="hl"><p>La segreteria informa che gli orari di apertura saranno resi noti all’apertura. Per ogni informazione si invita a consultare il presente sito.</p><p className="muted small">Prot. {comunicazioni[1].prot}</p></Box>
         <Box title="Sponsor e partner" right={<Link to="/sponsor">Tutti →</Link>}><ul className="spl">{sponsors.map(s => <li key={s.name}><Link to="/sponsor"><Img src={s.logo} alt={'Logo ' + s.name} /><span>{s.name}</span><em>{s.tier === 'main' ? 'Main sponsor' : s.tier === 'official' ? 'Sponsor ufficiale' : 'Partner'}</em></Link></li>)}</ul></Box>
         <Box title="Altre comunicazioni"><ul className="comm">{comunicazioni.slice(1).map(c => <li key={c.prot}><b>{c.title}</b><span className="muted small">Prot. {c.prot}</span><p>{c.text}</p></li>)}</ul></Box>
         <AdBanner ad={ads[5]} variant="tall" />

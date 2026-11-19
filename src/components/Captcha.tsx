@@ -54,7 +54,7 @@ export default function Captcha({ onPass }: { onPass: () => void }) {
     setMsg(`Verifica non superata (tentativo ${t} di ${siteConfig.captcha.maxAttempts}). Si prega di riprovare con una nuova verifica.`); setKind(k => nextKind(k)); setN(x => x + 1)
   }
   return <div className="wrap sec"><div className="win cap-win">
-    <div className="win-title"><span>🤖 VERIFICA ANTI-ROBOT — Accesso allo shop</span></div>
+    <div className="win-title"><span>VERIFICA ANTI-ROBOT — Accesso allo shop</span></div>
     <div className="win-body">
       {stage === 'declare' && <>
         <p>Si comunica che l’accesso allo shop ufficiale è subordinato a una verifica anti-robot, ai sensi delle disposizioni societarie. La procedura è gratuita e dura pochi istanti, salvo imprevisti.</p>

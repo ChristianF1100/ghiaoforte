@@ -17,7 +17,7 @@ export function Shop() {
     return sort === 'asc' ? [...l].sort((a, b) => a.price - b.price) : sort === 'desc' ? [...l].sort((a, b) => b.price - a.price) : l
   }, [q, sort, only])
   return <div className="wrap sec"><h1>Shop ufficiale</h1>
-    <Notice>La società informa che le richieste saranno evase secondo disponibilità. La verifica anti-robot è stata superata, salvo contestazioni.</Notice>
+    <Notice>La società informa che le richieste saranno evase secondo disponibilità. La verifica anti-robot è stata superata.</Notice>
     <p className="lead">Maglie, abbigliamento e accessori per vivere i colori del club ogni giorno.</p>
     <div className="shop-grid">
       <aside><Box title="Filtri del catalogo"><label className="f">Cerca nel catalogo<input type="search" value={q} onChange={e => setQ(e.target.value)} placeholder="Nome o descrizione" /></label>

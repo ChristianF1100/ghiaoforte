@@ -35,7 +35,7 @@ export default function Layout() {
         <div><h3>Il sito</h3><ul>{nav.map(([to, l]) => <li key={to}><Link to={to}>{l}</Link></li>)}</ul></div>
         <div><h3>Sponsor principali</h3><ul>{sponsors.filter(s => s.tier !== 'partner').map(s => <li key={s.name}><Link to="/sponsor">{s.name}</Link></li>)}</ul><h3>Social</h3><p>{club.social.map(s => <a key={s.label} href={s.url} className="chip">{s.label}</a>)}</p></div>
       </div>
-      <div className="ftr-legal"><p>© {club.founded}–{new Date().getFullYear()} AS {club.name} — Tutti i diritti riservati, salvo smarrimento.</p>
+      <div className="ftr-legal"><p>© {club.founded}–{new Date().getFullYear()} AS {club.name} — Tutti i diritti riservati.</p>
         <p><button type="button" onClick={() => popup('privacy-info')}>Privacy</button> · <button type="button" onClick={() => popup('cookie-info')}>Cookie policy</button> · <button type="button" onClick={() => popup('avvisi')}>Avvisi alla utenza</button></p>
         <p>{last && <>Ultimo aggiornamento: {fdate(last)}. </>}Sito ottimizzato per la visualizzazione a 1024×768. La gestione del sito è curata dalla società, secondo disponibilità.</p></div></footer>
     </div>

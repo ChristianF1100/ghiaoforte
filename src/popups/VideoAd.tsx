@@ -27,7 +27,7 @@ export default function VideoAd({ videos, onDone }: { videos: AdVideo[]; onDone:
     <div className="win ad-win">
       <div className="win-title"><span>📺 MESSAGGIO PUBBLICITARIO</span><span className="win-tag">non saltabile</span></div>
       <div className="win-body">
-        <p className="ad-top">Si comunica all’utenza che l’accesso al portale è subordinato alla visione del seguente messaggio promozionale.{ad.sponsor && <> Offerto da: <b>{ad.sponsor}</b>.</>}</p>
+      <p className="ad-top">Questo annuncio non si può saltare. Il sito e la nuova maglia del Ghiaoforte esistono grazie a <b>Electrical Restart s.r.l.s.</b>{ad.sponsor && <> — Inserzione di <b>{ad.sponsor}</b></>}.</p>
         <div className="ad-video">
           <video ref={ref} src={videoUrl(ad.src)} playsInline preload="auto" tabIndex={-1} aria-label="Video pubblicitario"
             onContextMenu={e => e.preventDefault()}
@@ -44,7 +44,7 @@ export default function VideoAd({ videos, onDone }: { videos: AdVideo[]; onDone:
         <div className="pbar" role="progressbar" aria-label="Avanzamento del messaggio" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(pct)}><i style={{ width: pct + '%' }} /></div>
         <div className="ad-foot">
           {st === 'ended'
-            ? <button className="btn pri big" autoFocus onClick={onDone}>ACCEDI AL PORTALE</button>
+            ? <button className="btn pri big" autoFocus onClick={onDone}>SKIP</button>
             : <p className="ad-count" aria-live="off">{st === 'blocked' ? 'In attesa dell’avvio manuale del messaggio.' : st === 'loading' ? 'Caricamento del messaggio in corso…' : <>L’accesso al portale sarà disponibile tra <b>{left}</b> second{left === 1 ? 'o' : 'i'}.</>}</p>}
         </div>
       </div>
