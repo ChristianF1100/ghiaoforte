@@ -8,7 +8,7 @@ import { useCart } from '../shop/cart'
 import { fdate, img } from '../lib/util'
 import { usePopups } from '../popups/PopupContext'
 import Ticker from './Ticker'
-const nav = [['/', 'Home'], ['/societa', 'La società'], ['/squadre', 'Squadre'], ['/news', 'News'], ['/galleria', 'Galleria'], ['/dove-giochiamo', 'Dove giochiamo'], ['/sponsor', 'Sponsor'], ['/shop', 'Shop']]
+const nav = [['/', 'Home'], ['/societa', 'La società'], ['/squadre', 'Squadre'], ['/news', 'News'], ['/galleria', 'Galleria'], ['/dove-giochiamo', 'Dove giochiamo'], ['/sponsor', 'Sponsor'], ['/scommesse', 'Scommesse'], ['/shop', 'Shop']]
 export default function Layout() {
   const [open, setOpen] = useState(false), { count, toast } = useCart(), loc = useLocation(), { open: popup } = usePopups()
   useEffect(() => { setOpen(false); window.scrollTo(0, 0) }, [loc.pathname])

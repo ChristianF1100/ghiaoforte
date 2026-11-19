@@ -148,3 +148,20 @@ input,select,textarea{font:16px var(--body);color:var(--ink)}
   .pop{width:100%}.pop-btns{justify-content:stretch}.pop-btns .btn{flex:1}.win-body{padding:.8rem}.timeline li{flex-direction:column;gap:.1rem}.sec>h1:first-child,.wrap.sec>h1{font-size:1.15rem}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Scommesse */
+.bet-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:.9rem;align-items:start}
+.bet-m{padding:.55rem 0;border-bottom:1px dotted var(--line)}.bet-m:last-child{border-bottom:0}
+.bet-m.hit{background:#dbe8d2}.bet-m.miss{background:#f3d9d4}
+.bet-teams{font-size:.9rem;margin-bottom:.35rem}.bet-teams span{color:var(--muted)}.bet-score{font:700 1rem var(--head);color:var(--or-d)!important}
+.bet-odds{display:grid;grid-template-columns:repeat(5,1fr);gap:.3rem}
+.bet-o{display:flex;flex-direction:column;align-items:center;font:inherit;background:#e2dec9;border:2px solid;border-color:#fff #66634f #66634f #fff;padding:.25rem 0;cursor:pointer;color:#111}
+.bet-o span{font-size:.7rem;font-weight:700;color:var(--muted)}.bet-o b{font-size:.85rem}
+.bet-o:hover:not(:disabled){background:#efebd6}.bet-o.on{background:linear-gradient(var(--or),var(--or-d));color:#fff;border-color:#ffc58a #6d3400 #6d3400 #ffc58a}.bet-o.on span{color:#fff}
+.bet-o:disabled{cursor:default}.bet-o.won:not(.on){outline:2px solid var(--g2)}
+.bet-slip{list-style:none;margin:0 0 .6rem;padding:0;font-size:.8rem}.bet-slip li{display:flex;justify-content:space-between;gap:.5rem;padding:.25rem 0;border-bottom:1px dotted var(--line)}
+.bet-f{display:block;font-weight:700;font-size:.8rem;margin:.4rem 0}.bet-f input{display:block;width:100%;margin-top:.2rem;padding:.4rem;font:inherit;border:2px inset #aaa}
+.bet-sum{display:grid;grid-template-columns:1fr auto;gap:.2rem .6rem;margin:.6rem 0;font-size:.85rem}.bet-sum dt{color:var(--muted)}.bet-sum dd{margin:0;text-align:right;font-weight:700}.bet-sum dd.big{font:700 1.2rem var(--head);color:var(--g1)}
+.bet-res{margin-top:1rem;padding:1rem;border:3px double;text-align:center}.bet-res.won{background:#dbe8d2;border-color:var(--g2)}.bet-res.lost{background:#f3d9d4;border-color:var(--red)}
+.bet-res h2{margin-top:0}.bet-msg{font:italic 1.1rem var(--head)}
+@media(max-width:760px){.bet-grid{grid-template-columns:1fr}}
