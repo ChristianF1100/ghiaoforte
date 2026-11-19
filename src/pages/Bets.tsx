@@ -8,9 +8,8 @@ type Outcome = '1' | 'X' | '2'
 const SIGNS: Sign[] = ['1', '1X', 'X', 'X2', '2']
 const COVERS: Record<Sign, Outcome[]> = { '1': ['1'], '1X': ['1', 'X'], X: ['X'], X2: ['X', '2'], '2': ['2'] }
 
-const TEAMS = [club.name, 'Polisportiva Valtormenta', 'Atletico Cascinello', 'US Borgo Sbandato', 'FC Montecicogna']
-// Calendario: ogni squadra gioca due volte (5 squadre, 5 partite a turno).
-const PAIRS: [number, number][] = [[0, 1], [2, 3], [4, 0], [1, 2], [3, 4]]
+const TEAMS = ['A.S. Ghiaoforte', 'A.S. Furbolandia', 'Villinia Calcio', 'Legione Nera', 'Uniti per Palanca', 'Stella Azzurra', 'Dark Neto']
+const PALANCA = 'Uniti per Palanca'
 
 const LOSS = [
   'Grazie per i tuoi soldi, li utilizzeremo per corrompere gli arbitri.',
@@ -34,12 +33,20 @@ const eur = (n: number) => n.toLocaleString('it-IT', { style: 'currency', curren
 
 interface Match { home: string; away: string; odds: Record<Sign, number> }
 
-function makeMatches(): Match[] {
-  return PAIRS.map(([h, a]) => {
-    const o1 = rnd(1.2, 4.5), oX = rnd(2.8, 4.2), o2 = rnd(1.2, 6)
-    const dc = (x: number, y: number) => Math.max(1.05, Math.round((1 / (1 / x + 1 / y)) * 0.92 * 100) / 100)
-    return { home: TEAMS[h], away: TEAMS[a], odds: { '1': o1, X: oX, '2': o2, '1X': dc(o1, oX), X2: dc(oX, o2) } }
+const dc = (x: number, y: number) => Math.max(1.05, Math.round((1 / (1 / x + 1 / y)) * 0.92 * 100) / 100)
+
+// Ogni giornata: squadre rimescolate (7 squadre: 3 partite, una riposa) e quote nuove.
+function makeDay(n: number): { n: number; matches: Match[]; rest: string } {
+  const t = [...TEAMS].sort(() => Math.random() - 0.5)
+  const matches = [0, 2, 4].map(k => {
+    const home = t[k], away = t[k + 1]
+    let o1 = rnd(1.2, 4.5), o2 = rnd(1.2, 6), oX = rnd(2.8, 4.2)
+    // Uniti per Palanca: quota di vittoria sempre altissima.
+    if (home === PALANCA) { o1 = rnd(9, 18); o2 = rnd(1.1, 1.5); oX = rnd(5, 7) }
+    if (away === PALANCA) { o2 = rnd(9, 18); o1 = rnd(1.1, 1.5); oX = rnd(5, 7) }
+    return { home, away, odds: { '1': o1, X: oX, '2': o2, '1X': dc(o1, oX), X2: dc(oX, o2) } }
   })
+  return { n, matches, rest: t[6] }
 }
 
 // Esito casuale, con probabilità leggermente pesate dalle quote.
@@ -58,7 +65,7 @@ function simulate(m: Match) {
 
 export default function Bets() {
   useTitle('Scommesse', 'Gioca la tua schedina sulle partite del Ghiaoforte. Gioco simulato, nessun denaro reale.')
-  const [matches, setMatches] = useState(makeMatches)
+  const [day, setDay] = useState(() => makeDay(1)), { matches, rest } = day
   const [sel, setSel] = useState<Record<number, Sign | undefined>>({})
   const [stake, setStake] = useState('10')
   const [res, setRes] = useState<null | { rows: { h: number; a: number; outcome: Outcome }[]; won: boolean; stake: number; prize: number; msg: string }>(null)
@@ -76,13 +83,13 @@ export default function Bets() {
     const won = chosen.every(([i, s]) => COVERS[s].includes(rows[+i].outcome))
     setRes({ rows, won, stake: st, prize, msg: pick(won ? WIN : LOSS) })
   }
-  const again = () => { setRes(null); setSel({}); setMatches(makeMatches()) }
+  const again = () => { setRes(null); setSel({}); setDay(makeDay(day.n + 1)) }
 
   return <div className="wrap sec"><h1>Scommesse</h1>
     <Notice title="Gioco responsabile">si gioca con denaro immaginario. Nessuna vincita è riscuotibile, nessuna perdita è rimborsabile, nessun arbitro è stato corrotto (per ora).</Notice>
-    <p className="lead dark">Scegli l’esito delle partite della giornata (1, 1X, X, X2, 2), imposta la puntata e piazza la schedina. Le quote cambiano a ogni nuova giornata, secondo criteri che la società preferisce non divulgare.</p>
+    <p className="lead dark">Scegli l’esito delle partite della giornata (a ogni giornata le squadre si rimescolano) (1, 1X, X, X2, 2), imposta la puntata e piazza la schedina. Le quote cambiano a ogni nuova giornata, secondo criteri che la società preferisce non divulgare.</p>
     <div className="bet-grid">
-      <Box title="Giornata — 5 partite" right="Quote variabili">
+      <Box title={`Giornata ${day.n} — 3 partite`} right={`Riposa: ${rest}`}>
         <div className="bet-matches">{matches.map((m, i) => { const r = res?.rows[i]; const s = sel[i]
           return <div className={'bet-m' + (r && s ? (COVERS[s].includes(r.outcome) ? ' hit' : ' miss') : '')} key={i}>
             <div className="bet-teams"><b>{m.home}</b> <span>–</span> <b>{m.away}</b>{r && <span className="bet-score"> {r.h}-{r.a}</span>}</div>
